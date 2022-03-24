@@ -15,11 +15,8 @@ export const Rentals = () => {
   const getData = () => {
     axios.get("http://localhost:8080/houses").then((res) => {
       setData(res.data);
-      // console.log(res.data);
     });
   };
-
-  // console.log(data, "data");
 
   return (
     <div className="rentalContainer">
@@ -108,9 +105,7 @@ export const Rentals = () => {
                 <td className="address">{house.address}</td>
                 <td className="areaCode">{house.areaCode}</td>
                 <td className="rent">{house.rent}</td>
-                <td className="preferredTenants">
-                  {/* Show text Both or Bachelors or Married based on values */}
-                </td>
+                <td className="preferredTenants">{house.preferredTenant}</td>
                 <td className="houseImage">
                   <img src={house.image} alt="house" />
                 </td>

@@ -8,12 +8,12 @@ export const AddHouse = () => {
     address: "",
     areaCode: "",
     rent: "",
-    bachelor: "",
-    married: "",
+    preferredTenant: "",
   });
 
   const handleChange = (e) => {
     const { id, value } = e.target;
+
     setHouses({ ...houses, [id]: value });
   };
   const handleSub = (e) => {
@@ -68,22 +68,25 @@ export const AddHouse = () => {
           required
         />
         <br />
-        <label>preferredTenant</label>
-        <br />
+        {/* <label>preferredTenant</label> */}
         <label>bachelor</label>
         <input
-          type="checkbox"
-          className="bachelor"
           onChange={handleChange}
-          id="bachleor"
+          checked={houses.bachelor}
+          type="checkbox"
+          id="preferredTenant"
+          className="bachelor"
+          value="bachelor"
         />
         <br />
         <label>married</label>
         <input
-          type="checkbox"
-          className="married"
           onChange={handleChange}
-          id="married"
+          checked={houses.married}
+          type="checkbox"
+          id="preferredTenant"
+          className="married"
+          value="married"
         />
         <br />
         <label>image</label>
